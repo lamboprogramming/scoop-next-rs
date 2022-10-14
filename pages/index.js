@@ -3,6 +3,7 @@ import Head from 'next/head'
 import Image from 'next/image'
 import tw from 'tailwind-styled-components'
 import Map from './components/Map'
+import Link from 'next/link'
 
 export default function Home() {
 
@@ -23,15 +24,24 @@ export default function Home() {
 
       {/*ActionButtons*/}
     <ActionButtons>
+
+    {/* Buttons #1 */}
+      <Link href='/search'>
       <ActionButton>
       <ActionButtonImage src=" https://i.ibb.co/cyvcpfF/uberx.png"/>
       Ride </ActionButton>
+      </Link>
+
+       {/* Buttons #2 */}
       <ActionButton>
       <ActionButtonImage src=" https://i.ibb.co/n776JLm/bike.png"/>
       Wheels </ActionButton>
       <ActionButton> 
+
+       {/* Buttons #3 */}
       <ActionButtonImage src=" https://i.ibb.co/5RjchBg/uberschedule.png"/>
       Reserve </ActionButton>
+
     </ActionButtons>
 
       {/*InputButtons*/}
@@ -56,7 +66,7 @@ const Header = tw.div`
 flex justify-between items-center 
 `
 const UberLogo = tw.img`
-h-28 
+h-20 
 `
 
 const Profile = tw.div`
