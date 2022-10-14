@@ -8,5 +8,5 @@
 8.  Pass in location data into search page - DONE
 9.  Use passed in data to put on the map
 10. Create the HTML for Ride Selector
-
-
+11. Calculate the price of the trip
+12. Add Login
