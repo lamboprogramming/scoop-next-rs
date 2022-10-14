@@ -1,13 +1,21 @@
-import React from 'react';
+import { useState } from 'react';
 import tw from 'tailwind-styled-components'
+import Link from 'next/link'
 
 const Search = () => {
+
+    const[pickup, setPickup] = useState("")
+    const[dropoff, setDropoff] = useState("")
+    console.log(pickup)
+    console.log(dropoff)
+
   return (
     <Wrapper>
         <ButtonContainer>
+          <Link href="/">
             <BackButton src='https://img.icons8.com/ios-filled/50/000000/left.png' alt="/"/>
+            </Link>
         </ButtonContainer>
-
         <InputContainer>
           <FromToIcons>
             <Circle src="https://img.icons8.com/ios-filled/50/9CA3AF/filled-circle.png" alt="/"/>
@@ -15,8 +23,14 @@ const Search = () => {
             <Square src="https://img.icons8.com/windows/50/000000/square-full.png" alt="/"/>
           </FromToIcons>
             <InputBoxes>
-              <Input placeholder='Enter pickup location'/>
-              <Input placeholder='Where to?'/>
+              <Input placeholder='Enter pickup location'
+              value={pickup}
+              onChange={(e) => setPickup(e.target.value)}
+              />
+              <Input placeholder='Where to?'
+              value={dropoff}
+              onChange={(e) => setDropoff(e.target.value)}
+              />
             </InputBoxes>
             <PlusIcon src="https://img.icons8.com/ios/50/000000/plus-math.png"/>
         </InputContainer>
@@ -24,6 +38,17 @@ const Search = () => {
             <StarIcon src="https://img.icons8.com/ios-filled/50/ffffff/star--v1.png" />
             Saved Places
           </SavedPlaces>
+          <Link href={{
+            pathname: '/confirm',
+            query: {
+              pickup: pickup,
+              dropoff: dropoff
+            }
+          }}>
+          <ConfirmButtonContainer>
+            Confirm Locations
+          </ConfirmButtonContainer>
+          </Link>
      
     </Wrapper>
   );
@@ -31,8 +56,12 @@ const Search = () => {
 
 export default Search;
 
+const ConfirmButtonContainer = tw.div`
+bg-black text-white text-center mt-2 mx-4 px-4 py-3 text-2xl cursor-pointer
+`
+
 const Wrapper = tw.div`
-bg-gray-200 h-screen
+bg-gray-200 h-screen 
 `
 
 const ButtonContainer = tw.div`
@@ -40,7 +69,7 @@ bg-white px-4
 ` 
 
 const BackButton = tw.img`
-h-12
+h-12 cursor-pointer
 `
 const InputContainer = tw.div`
 bg-white flex items-center px-4 mb-2
