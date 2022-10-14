@@ -28,18 +28,18 @@ export default function Home() {
     {/* Buttons #1 */}
       <Link href='/search'>
       <ActionButton>
-      <ActionButtonImage src=" https://i.ibb.co/cyvcpfF/uberx.png"/>
+      <ActionButtonImage src="https://i.ibb.co/cyvcpfF/uberx.png"/>
       Ride </ActionButton>
       </Link>
 
        {/* Buttons #2 */}
       <ActionButton>
-      <ActionButtonImage src=" https://i.ibb.co/n776JLm/bike.png"/>
+      <ActionButtonImage src="https://i.ibb.co/n776JLm/bike.png"/>
       Wheels </ActionButton>
       <ActionButton> 
 
        {/* Buttons #3 */}
-      <ActionButtonImage src=" https://i.ibb.co/5RjchBg/uberschedule.png"/>
+      <ActionButtonImage src="https://i.ibb.co/5RjchBg/uberschedule.png"/>
       Reserve </ActionButton>
 
     </ActionButtons>
